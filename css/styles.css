@@ -999,8 +999,13 @@ footer .container {
 #site-navigation #main-menu {
   display: none;
 }
- 
+
+.logo {
+  z-index: 3;
+}
+
 #site-navigation > label {
+  z-index: 3;
   line-height: 46px;
   display: block;
   font-size: 36px;
@@ -1016,19 +1021,34 @@ footer .container {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
 }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  body {
+    overflow: visible;
+    height: 100%;
+  }
  
 #site-navigation > input:checked + #main-menu {
   display: block;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: calc(100% - 70px);
+  padding-top: 70px;
   clear: both;
   right: 0;
-  top: 64px;
+  top: 0;
   position: absolute;
   background: #181817;
   color: #fff;
   z-index: 2;
+  /* The main point: */
+  overflow-y: auto;
+  /* Optional but highly reccomended: enables momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 #site-navigation > input:checked + .hidden-menu {
@@ -1087,6 +1107,12 @@ footer .container {
   }
 }
 
+@media screen and (max-width: 600px), screen and (max-height: 600px) {
+  .home p {
+    font-size: 26px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   #footer-grid-container {
     flex-direction: column;
@@ -1094,9 +1120,7 @@ footer .container {
   .logo {
     padding: 0 45px 0 35px;
   }
-  .home p {
-    font-size: 26px;
-  }
+
   .title-view-detail-block__dummy2 {
   flex: 3 0;
   }

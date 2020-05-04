@@ -441,11 +441,14 @@
     </div>
     <script type="text/javascript">
         function switchLabel() {
+            let root = document.getElementsByTagName( 'html' )[0];
             let $label = document.getElementById("mobile-menu-label");
             if(document.getElementById("toggle-mobile-menu").checked) {
                 $label.innerHTML = "&#9776;";
+                root.classList.remove("no-scroll");
             } else  {
                 $label.innerHTML = "&#10006;";
+                root.classList.add("no-scroll");
             }
         }
     </script>
