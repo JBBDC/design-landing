@@ -1001,6 +1001,7 @@ footer .container {
 }
  
 #site-navigation > label {
+  line-height: 46px;
   display: block;
   font-size: 36px;
   color: #fff;
