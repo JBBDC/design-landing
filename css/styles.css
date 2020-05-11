@@ -219,7 +219,7 @@ nav a {
 
 .home {
   position: relative;
-  max-height: calc(100vh - 106px);
+  max-height: calc(100vh - 80px);
   display: flex;
 }
 
@@ -1057,7 +1057,7 @@ header .content {
   #site-navigation #main-menu { 
   z-index: 3;
   display: block;
-  min-height: calc(100vh - 110px);
+  min-height: calc(100vh - 80px);
   clear: both;
   left: 0;
   top: 0;
