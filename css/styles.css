@@ -1057,7 +1057,7 @@ header .content {
   #site-navigation #main-menu { 
   z-index: 3;
   display: block;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 110px);
   clear: both;
   left: 0;
   top: 0;
@@ -1068,11 +1068,10 @@ header .content {
   width: 0;
   transition: width .5s ease;
   overflow: hidden;
-  border-right: 1px solid #ebebeb;
 }
 
 #site-navigation > input:checked + #main-menu {
-  width: 270px;
+  width: 260px;
 }
 
 #site-navigation input:checked + .hidden-menu {
