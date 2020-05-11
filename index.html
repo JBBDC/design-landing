@@ -19,7 +19,11 @@
                 <div class="navbar">
                     <nav id="site-navigation" aria-label="Menu">
                         <label id="mobile-menu-label" for="toggle-mobile-menu" aria-label="Menu"
-                               onclick="switchLabel()">&#9776;</label>
+                               class="hamburger hamburger--squeeze">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </label>
                         <input id="toggle-mobile-menu" type="checkbox"/>
                         <ul id="main-menu">
                             <li><a href="/">HOME</a></li>
@@ -28,7 +32,6 @@
                             <li><a href="#blog">BLOG</a></li>
                             <li><a href="">ACCESSORIES</a></li>
                             <li><a href="">CONTACT</a></li>
-                            <li class="hidden-menu"><a href="">CART</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -42,6 +45,7 @@
     </div>
 </header>
 <main>
+    <div id="blocker"></div>
     <div class="container">
         <div id="home" class="home">
             <div class="slider">
@@ -457,14 +461,19 @@
         function switchLabel() {
             let root = document.getElementsByTagName('html')[0];
             let $label = document.getElementById("mobile-menu-label");
+            let blocker = document.getElementById("blocker");
             if (document.getElementById("toggle-mobile-menu").checked) {
-                $label.innerHTML = "&#9776;";
+                $label.classList.remove("is-active");
                 root.classList.remove("no-scroll");
+                blocker.classList.remove("block");    
             } else {
-                $label.innerHTML = "&#10006;";
+                $label.classList.add("is-active");
                 root.classList.add("no-scroll");
+                blocker.classList.add("block");  
             }
         }
+    document.getElementById("mobile-menu-label").addEventListener("click", switchLabel);
+
     </script>
     <script>
         var multiItemSlider = (function () {
